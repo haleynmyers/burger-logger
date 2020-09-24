@@ -1,0 +1,29 @@
+{
+  "name": "burger-logger",
+  "version": "1.0.0",
+  "description": "Complile a list of all the yummy burgers you wish to try from our menu, or make up your own delicious creation to add to the list! When you have eaten that burger you can click the Devoured! button to add it to another list that keeps track of all the burgers you've tried!",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"npm test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haleynmyers/burger-logger.git"
+  },
+  "keywords": [
+    "\"start\":",
+    "\"node",
+    "index\""
+  ],
+  "author": "haleynmyers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haleynmyers/burger-logger/issues"
+  },
+  "homepage": "https://github.com/haleynmyers/burger-logger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
