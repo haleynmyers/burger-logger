@@ -4,28 +4,32 @@ var router = express.Router();
 // Import the model (burger.js) to use its database functions.
 var burger = require('../models/burger.js');
 
-// Create all our routes and set up logic within those routes where required.
+// get all burgers on list and populate page.
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var burgerObject = { burgers: data };
     res.render("index", burgerObject);
   });
 });
+//post or create new list item
+router.post("/api", function(req, res) {
+  burger.insertOne(req.body.burger_name, function(result) {
 
-router.post("/burgers/create", function(req, res) {
-  console.log(req.body);
-  burger.insertOne(req.body.burger_name, function() {
-
-    res.redirect("/");
+    res.json({id: result.id});
   });
 });
-
-router.put("/burgers/eaten/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-  burger.updateOne( condition, function(result) {
+ //put or update if it has been eaten
+router.put("/api/:id", function(req, res) {
+  burger.updateOne( req.params.id, function() {
       res.redirect("/");
     }
   );
+});
+//delete from list
+router.delete("/burgers/:id", function (req,res){
+  burger.delete(req.params.id, function(){
+    res.json("Burger deleted");
+  });
 });
 
 // Export routes for server.js to use.

@@ -1,70 +1,56 @@
-<div class="wrapper" style="background-color: burlywood">
+<div class="wrapper">
 
-<div class="jumbotron jumbotron-fluid" style="background-color: saddlebrown">
-  <div class="container">
-    <img src="/assets/img/burger-clipart.png" alt="Burger" id="jumboBurger" />
-     <h1 class="display-4">Burger Base</h1>
-    <p class="lead">Keep track of all the burgers you want and have devoured!</p>
-  </div>
-</div>
-<div class="row">
-  <div class="col-6">
-    <div class="card">
-      <div class="card-header">
-        Burgers I Want
-      </div>
-      <div class="card-body">
-        <ul>
-            {{#each burgers}}
-            {{#unless devoured}}
-            <li>
+  <div class="jumbotron jumbotron-fluid" style="background-color: saddlebrown">
+    <div class="container text-center">
+      <img src="/assets/img/burger-clipart.png" alt="Burger" />
+      <span>
+        <h1 class="display-4">Burger Base</h1>
+        <p class="lead">Keep track of all the burgers you want and have devoured!</p>
 
-            <h5 class="card-title">{{ burger_name }}
-            <button class="devour btn btn-primary" data-id="{{id}}">DEVOUR IT
-            </button> </h5>
-            </li>
-            {{/unless}}
-            {{/each}}
-        </ul>
-      </div>
+      </span>
     </div>
   </div>
-  <div class="col-5">
-    <div class="card">
-      <div class="card-header">
-        Burgers I Devoured
+  <div class="row">
+    {{!-- not-devoured column --}}
+    <div class="col-6">
+      <h3 class="text-center">Burgers I Want</h3>
+      {{#each burgers}}
+      {{#unless devoured}}
+      <div class="input-group">
+        <h6 class="text-center">{{ burger_name }}
+          <span class="input-group-btn">
+            <button class="devour btn-sm btn-dark" data-id="{{id}}" type="submit" data-toggle="button"
+              aria-pressed="false">Devour it</button>
+          </span>
+        </h6>
       </div>
-      <div class="card-body">
-       
-            <ul>
-              {{#each burgers}}
-              {{#if devoured}}
-             <li>
-               <h5>{{  burgers  }}</h5>
-             </li> 
-              {{/if}}
-              {{/each}}
-            </ul>
+      {{/unless}}
+      {{/each}}
+
+    </div>
+
+    {{!-- Devoured column --}}
+    <div class="col-6">
+      <h3>Burgers I Devoured</h3>
+      {{#each burgers}}
+      {{#if devoured}}
+      <div class="input-group">
+        <p>{{id}}: {{  burgers  }}</p>
+        <span class="input-group-btn">
+          <button class="btn btn-danger delete" data-id="{{id}}" data-toggle="button" aria-pressed="false"
+            type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </span>
+        {{/if}}
+        {{/each}}
       </div>
     </div>
-  </div>
-</div>
+ 
 
-<div class="row">
-  <div class="col-3">
-  </div>
-  <div class="col-4">
-
-    <h2>What Burger is Next?</h2>
-    <form class="create-form" action="/burgers/create" method="POST">
-      <div class="form-group">
-        <input class="form-control form-control-lg" type="text" id="add_burger" name="burger_name" placeholder="Burger name">
-        <button type="button" class="btn btn-success">Add Burger</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-3">
-    
-  </div>
-</div>
-</div>
+      <h2 class="text-center">What Burger is Next?</h2>
+      <form class="create-form" action="/burgers/create" method="POST">
+        <div class="form-group text-center">
+          <input class="form-control form-control-lg" type="text" name="burger_name" placeholder="Burger name">
+          <button type="button" class="btn btn-success">Add Burger</button>
+        </div>
+      </form>
+    </div>

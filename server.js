@@ -1,5 +1,4 @@
 const express = require('express');
-const mysql = require('mysql');
 var exphbs = require("express-handlebars");
 var routes = require("./controllers/burgers_controllers.js");
 
