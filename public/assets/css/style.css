@@ -1,0 +1,13 @@
+body {
+    background-color: saddlebrown;
+    background-image: url("../img/inspiration-geometry.png");
+    margin: 20px,
+};
+
+.jumbotron{
+    background-color: burlywood;
+};
+
+.row{
+    margin-bottom: 20px;
+}
