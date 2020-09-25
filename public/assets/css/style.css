@@ -1,13 +1,17 @@
 body {
-    background-color: saddlebrown;
     background-image: url("../img/inspiration-geometry.png");
-    margin: 20px,
+    margin: 20px;
+    padding: 2rem;
 };
 
 .jumbotron{
-    background-color: burlywood;
+    display: flex;
 };
 
 .row{
     margin-bottom: 20px;
+};
+
+#jumboBurger{
+    max-height: 100px;
 }

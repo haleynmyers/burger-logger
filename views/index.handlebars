@@ -1,6 +1,8 @@
-<div class="jumbotron jumbotron-fluid">
+<div class="wrapper" style="background-color: burlywood">
+
+<div class="jumbotron jumbotron-fluid" style="background-color: saddlebrown">
   <div class="container">
-    <img src="/public/assets/img/burger-clipart.png" alt="Burger" />
+    <img src="/assets/img/burger-clipart.png" alt="Burger" id="jumboBurger" />
      <h1 class="display-4">Burger Base</h1>
     <p class="lead">Keep track of all the burgers you want and have devoured!</p>
   </div>
@@ -13,15 +15,16 @@
       </div>
       <div class="card-body">
         <ul>
-          <div>
             {{#each burgers}}
             {{#unless devoured}}
-            <h5 class="card-title">{{ burger }} </h5>
+            <li>
+
+            <h5 class="card-title">{{ burger_name }}
             <button class="devour btn btn-primary" data-id="{{id}}">DEVOUR IT
-            </button>
+            </button> </h5>
+            </li>
             {{/unless}}
             {{/each}}
-          </div>
         </ul>
       </div>
     </div>
@@ -32,38 +35,36 @@
         Burgers I Devoured
       </div>
       <div class="card-body">
-        <ul>
-          <div>
+       
             <ul>
               {{#each burgers}}
               {{#if devoured}}
-              <h5>{{  burgers  }}</h5>
+             <li>
+               <h5>{{  burgers  }}</h5>
+             </li> 
               {{/if}}
               {{/each}}
             </ul>
-          </div>
-        </ul>
       </div>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-4">
+  <div class="col-3">
   </div>
   <div class="col-4">
 
-    <h2>Add a Burger</h2>
-    <form class="create-form">
-
+    <h2>What Burger is Next?</h2>
+    <form class="create-form" action="/burgers/create" method="POST">
       <div class="form-group">
-        <label form="burgers">Burger Name:</label>
-        <input class="form-control form-control-lg" type="text" id="add_burger" name="name" placeholder="What burger is next?">
+        <input class="form-control form-control-lg" type="text" id="add_burger" name="burger_name" placeholder="Burger name">
         <button type="button" class="btn btn-success">Add Burger</button>
       </div>
     </form>
   </div>
-  <div class="col-4">
+  <div class="col-3">
     
   </div>
+</div>
 </div>
