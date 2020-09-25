@@ -7,5 +7,3 @@ CREATE TABLE burgers (
     burger_name VARCHAR(50) NOT NULL,
     devoured BOOLEAN DEFAULT false
 );
-
-INSERT INTO burgers (burger_name) VALUES ("Farm Burger", "Double Becker", "Peanut Butter Burger", "The Big One");

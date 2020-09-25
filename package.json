@@ -4,7 +4,8 @@
   "description": "Complile a list of all the yummy burgers you wish to try from our menu, or make up your own delicious creation to add to the list! When you have eaten that burger you can click the Devoured! button to add it to another list that keeps track of all the burgers you've tried!",
   "main": "index.js",
   "scripts": {
-    "test": "\"npm test\""
+    "test": "\"npm test\"",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

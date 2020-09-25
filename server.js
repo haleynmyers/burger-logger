@@ -15,6 +15,10 @@ app.use(express.json());
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+var routes = require("./controllers/burgers_controllers.js");
+
+app.use(routes);
+
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -31,3 +35,7 @@ connection.connect(function(err) {
   }
   console.log("connected as id " + connection.threadId);
 });
+
+app.listen(PORT, function() {
+  console.log("App now listening at localhost:" + PORT);
+})
