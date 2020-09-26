@@ -11,13 +11,14 @@ router.get("/", function(req, res) {
     res.render("index", burgerObject);
   });
 });
+
 //post or create new list item
 router.post("/api/burgers", function(req, res) {
   burger.insertOne(req.body.burger_name, function(result) {
     res.redirect("/");
-    // console.log("posted " + result);
   });
 });
+
  //put or update if it has been eaten
 router.put("/api/burgers/:id", function(req, res) {
   burger.updateOne( req.params.id, function(result) {

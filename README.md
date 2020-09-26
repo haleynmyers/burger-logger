@@ -3,7 +3,7 @@
 ## Description
 Complile a list of all the yummy burgers you wish to try from our menu, or make up your own delicious creation to add to the list! When you have eaten that burger you can click the Devoured! button to add it to another list that keeps track of all the burgers you've tried!
 
-![Burger logger demo]()
+![Burger logger demo](/public/img/burger-demo.gif)
 
 ## Table of Contents
 * [Deployed Link](#deployed-link)
@@ -15,7 +15,7 @@ Complile a list of all the yummy burgers you wish to try from our menu, or make 
 * [Questions](#questions)
 
 ## Deployed Link
-[Deployed on Heroku]()
+[Deployed on Heroku](https://floating-reef-88535.herokuapp.com/)
 
 ## Installation
 If you wish to clone the code locally, you will need to run
