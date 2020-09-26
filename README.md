@@ -3,7 +3,7 @@
 ## Description
 Complile a list of all the yummy burgers you wish to try from our menu, or make up your own delicious creation to add to the list! When you have eaten that burger you can click the Devoured! button to add it to another list that keeps track of all the burgers you've tried!
 
-![Burger logger demo](/public/img/burger-demo.gif)
+![Burger logger demo](https://github.com/haleynmyers/burger-logger/blob/master/public/assets/img/burger-demo.gif)
 
 ## Table of Contents
 * [Deployed Link](#deployed-link)
