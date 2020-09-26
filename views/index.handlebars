@@ -4,8 +4,8 @@
     <div class="container text-center">
       <img src="/assets/img/burger-clipart.png" alt="Burger" />
       <span>
-        <h1 class="display-4">Burger Base</h1>
-        <p class="lead">Keep track of all the burgers you want and have devoured!</p>
+        <h1 class="display-4" style="color: white; font-weight:bolder">Burger Base</h1>
+        <h6 class="lead" style="color: white">Keep track of all the burgers you want and have devoured!</h6>
 
       </span>
     </div>
@@ -16,14 +16,12 @@
       <h3 class="text-center">Burgers I Want</h3>
       {{#each burgers}}
       {{#unless devoured}}
-      <div class="input-group">
-        <h6 class="text-center">{{ burger_name }}
-          <span class="input-group-btn">
-            <button class="devour btn-sm btn-dark" data-id="{{id}}" type="submit" data-toggle="button"
-              aria-pressed="false">Devour it</button>
-          </span>
-        </h6>
-      </div>
+      <h6 class="text-center">{{ burger_name }}
+        <span class="input-group-btn">
+          <button class="devour btn-sm btn-dark" data-id="{{id}}" type="submit" data-toggle="button"
+            aria-pressed="false">Devour it</button>
+        </span>
+      </h6>
       {{/unless}}
       {{/each}}
 
@@ -31,26 +29,26 @@
 
     {{!-- Devoured column --}}
     <div class="col-6">
-      <h3>Burgers I Devoured</h3>
+      <h3 class="text-center">Burgers I Devoured</h3>
       {{#each burgers}}
       {{#if devoured}}
-      <div class="input-group">
-        <p>{{id}}: {{  burgers  }}</p>
-        <span class="input-group-btn">
-          <button class="btn btn-danger delete" data-id="{{id}}" data-toggle="button" aria-pressed="false"
-            type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
-        </span>
-        {{/if}}
-        {{/each}}
-      </div>
+      <h6 class="text-center">{{ burger_name }}</h6>
+      {{/if}}
+      {{/each}}
     </div>
- 
-
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-sm-12 col-md-6 ">
       <h2 class="text-center">What Burger is Next?</h2>
-      <form class="create-form" action="/burgers/create" method="POST">
+      <form class="create-form" action="/api/burgers" method="POST">
         <div class="form-group text-center">
-          <input class="form-control form-control-lg" type="text" name="burger_name" placeholder="Burger name">
-          <button type="button" class="btn btn-success">Add Burger</button>
+          <input class="form-control form-control-lg" id="burgerInput" type="text" name="burger_name"
+            placeholder="Burger name">
+          <button type="submit" class="btn btn-success" data-toggle="button" aria-pressed="false">Add Burger</button>
         </div>
       </form>
     </div>
+  </div>
+</div>
+
+</div>

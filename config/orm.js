@@ -25,12 +25,6 @@ var orm = {
         });
     },
 
-    delete: function(newID, cb){
-        connection.query('DELETE FROM burgers WHERE id = ?', newID, (err, res) =>{
-            if (err) throw err;
-            cb(res);
-        });
-    }
 };
 
 module.exports = orm;

@@ -12,25 +12,20 @@ router.get("/", function(req, res) {
   });
 });
 //post or create new list item
-router.post("/api", function(req, res) {
+router.post("/api/burgers", function(req, res) {
   burger.insertOne(req.body.burger_name, function(result) {
-
-    res.json({id: result.id});
+    res.redirect("/");
+    // console.log("posted " + result);
   });
 });
  //put or update if it has been eaten
-router.put("/api/:id", function(req, res) {
-  burger.updateOne( req.params.id, function() {
+router.put("/api/burgers/:id", function(req, res) {
+  burger.updateOne( req.params.id, function(result) {
       res.redirect("/");
     }
   );
 });
-//delete from list
-router.delete("/burgers/:id", function (req,res){
-  burger.delete(req.params.id, function(){
-    res.json("Burger deleted");
-  });
-});
+
 
 // Export routes for server.js to use.
 module.exports = router;

@@ -20,11 +20,6 @@ var burger = {
     });
   },
 
-  delete: function(newID, cb){
-    orm.delete(newID, function(res){
-      cb(res);
-    });
-  }
 };
 
 // Export the database functions for the controller (burgers_controller.js).
